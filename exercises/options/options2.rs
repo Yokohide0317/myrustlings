@@ -11,9 +11,13 @@ mod tests {
         let optional_target = Some(target);
 
         // TODO: Make this an if let statement whose value is "Some" type
-        word = optional_target {
-            assert_eq!(word, target);
-        }
+        let word = if optional_target == Some {
+            optional_target.unwrap();
+        } else {
+            None;
+        };
+
+        assert_eq!(word, target);
     }
 
     #[test]
